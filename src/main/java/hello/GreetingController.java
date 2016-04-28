@@ -25,6 +25,11 @@ public class GreetingController {
     	}
     }
     
+    @RequestMapping(value="/greeting_list", method=RequestMethod.GET)
+    public ArrayList<Greeting> greeting() {
+	return greetingList;
+    }
+
     @RequestMapping(value="/greeting", method=RequestMethod.POST)
     public void greeting(@RequestBody Greeting greeting) {
     	long id = greetingList.size();
